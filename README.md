@@ -22,3 +22,10 @@
     性能监控 cpu men disk network
     https://pypi.org/project/psutil/
 
+### 大牛推荐
+
+    Kenneth Reitz 肯尼斯 赖茨
+
+### 书单
+
+    https://www.jb51.net/article/127275.htm
