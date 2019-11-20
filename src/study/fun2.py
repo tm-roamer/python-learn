@@ -84,16 +84,90 @@
 # nums = [1, 2, 3]
 # calc(*nums)
 
-def person(name, age, **kw):
-    kw['job'][1] = '123123'
-    print('name:', name, 'age:', age, 'other:', kw)
+# def person(name, age, **kw):
+#     kw['job'][1] = '123123'
+#     print('name:', name, 'age:', age, 'other:', kw)
 
-# 牛逼 关键字参数
-list = [1, 3, 4]
-extra = {'city': 'Beijing', 'job': list}
-person('Jack', 24, **extra)
+# # 牛逼 关键字参数
+# list = [1, 3, 4]
+# extra = {'city': 'Beijing', 'job': list}
+# person('Jack', 24, **extra)
 
-# 注意kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外的extra。(浅copy)
-print(extra)
+# # 注意kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外的extra。(浅copy)
+# print(extra)
+
+# def enroll(name, gender, age=6, city='Beijing'):
+#     print('name:', name)
+#     print('gender:', gender)
+#     print('age:', age)
+#     print('city:', city)
+
+# enroll('Bob', 'M', 7, 'shanghai')
+# enroll('Adam', 'M', city='Tianjin')
+
+# 定义默认参数要牢记一点：默认参数必须指向不变对象！
 
 
+# def calc(*args):
+#     sum = 0
+#     for n in args:
+#         sum = sum + n * n
+#     return sum
+
+
+# nums = [1, 2, 3]
+# calc(*nums)
+
+# 关键字参数
+# def person(name, age, **kw):
+#     print('name:', name, 'age:', age, 'other:', kw)
+
+# person('Michael', 30)
+# person('Bob', 35, city='Beijing')
+# person('Adam', 45, gender='M', job='Engineer')
+
+# extra = {'city': 'Beijing', 'job': 'Engineer'}
+# person('Jack', 24, **extra)
+
+# 限制关键字参数
+# def person(name, age, **kw):
+#     if 'city' in kw:
+#         # 有city参数
+#         pass
+#     if 'job' in kw:
+#         # 有job参数
+#         pass
+#     print('name:', name, 'age:', age, 'other:', kw)
+
+# 命名关键字参数
+# def person(name, age, *, city, job):
+#     print(name, age, city, job)
+
+# person('Jack', 24, city='Beijing', job='Engineer')
+
+
+# 命名关键字参数
+# def person(name, age, *args, city, job):
+#     print(name, age, args, city, job)
+
+# person('Jack', 24, ('a', 'b'), city='Beijing', job='Engineer')
+# person('Jack', 24, ['a', 'b'], city='Beijing', job='Engineer')
+
+# person('Jack', 24, 'Beijing', 'Engineer')
+
+# def person(name, age, *, city='Beijing', job):
+#     print(name, age, city, job)
+
+# person('Jack', 24, job='Engineer')
+
+# def person(name, age, city, job):
+#     # 缺少 *，city和job被视为位置参数
+#     pass
+
+def f1(a, b, c=0, *args, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+
+def f2(a, b, c=0, *, d, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+
+f2(1, 2, d=99, ext=None)
