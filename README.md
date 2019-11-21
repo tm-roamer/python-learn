@@ -43,6 +43,18 @@
     基于Python的交互式数据包处理程序和库(使用户能够发送,嗅探和剖析并伪造网络数据包。此功能允许构建可以探测,扫描或攻击网络的工具)
     https://github.com/secdev/scapy
 
+    负载均衡器
+    https://github.com/v55448330/lazy-balancer
+
+    堡垒机
+    https://github.com/jumpserver/jumpserver
+
+    无线入侵检测工具
+    https://github.com/SYWorks/waidps
+
+    自动化运维平台
+    https://github.com/welliamcao/OpsManage
+
 
 ### 大牛推荐
 
